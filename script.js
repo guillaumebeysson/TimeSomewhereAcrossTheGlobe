@@ -1,15 +1,27 @@
-function updateTime() {
-  // Obtenir l'heure actuelle
-  var now = new Date();
+// Fonction pour générer une heure aléatoire entre 0 et 23
+function getRandomHour() {
+  return Math.floor(Math.random() * 24);
+}
 
-  // Extraire les heures, minutes et secondes
-  var hours = now.getHours();
+// Fonction pour mettre à jour l'heure
+function updateTime() {
+  // Obtenir l'heure actuelle pour les minutes et les secondes
+  var now = new Date();
   var minutes = now.getMinutes();
   var seconds = now.getSeconds();
 
+  // Si l'heure n'a pas encore été initialisée, générer une heure aléatoire
+  if (!window.randomHour) {
+    window.randomHour = getRandomHour();
+  }
+
   // Formater l'heure avec deux chiffres pour les heures, les minutes et les secondes
   var formattedTime =
-    padNumber(hours) + " : " + padNumber(minutes) + " : " + padNumber(seconds);
+    padNumber(window.randomHour) +
+    " : " +
+    padNumber(minutes) +
+    " : " +
+    padNumber(seconds);
 
   // Mettre à jour le contenu de la div avec l'id "clock"
   document.getElementById("clock").innerText = formattedTime;
@@ -20,8 +32,13 @@ function padNumber(number) {
   return number < 10 ? "0" + number : number;
 }
 
-// Mettre à jour l'heure toutes les secondes
-setInterval(updateTime, 1000);
-
-// Appeler updateTime une fois au chargement de la page pour afficher l'heure initiale
+// Mettre à jour l'heure lors du chargement de la page
 updateTime();
+
+// Actualiser l'heure lorsque la page est actualisée
+window.addEventListener("beforeunload", function () {
+  delete window.getRandomHour; // Supprimer l'heure aléatoire lors de l'actualisation
+});
+
+// Mettre à jour les secondes chaque seconde
+setInterval(updateTime, 1000);
