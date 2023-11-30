@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+#clock {
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 0 1em #ffffff;
+    height: 400px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 452px) {
+    h1 {
+        color: #ffffff;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 150px;
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+
+    #clock {
+        margin: 0 auto;
+        border-radius: 50%;
+        box-shadow: 0 0 1em #ffffff;
+        height: 300px;
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: 200;
+    }
+}
+
+@media screen and (max-width: 333px) {
+    h1 {
+        color: #ffffff;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+
+    #clock {
+        margin: 0 auto;
+        border-radius: 50%;
+        box-shadow: 0 0 1em #ffffff;
+        width: 250px;
+        height: 250px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: 200;
+    }
+}
